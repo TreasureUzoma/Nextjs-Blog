@@ -1,17 +1,17 @@
 const SkillList = [
   "next.js",
+  "react.js",
   "tailwind css",
   "figma",
   "javaScript",
+  "typeScript",
   "web design",
-  "Gatsby.js",
-  "strapi",
   "firebase",
   "generative AI",
   "wireframing",
   "SEO",
   "framer motion",
-  "sanity",
+  "shadcn",
 ];
 
 const Skills = () => {

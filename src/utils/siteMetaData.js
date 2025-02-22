@@ -3,10 +3,10 @@ const siteMetadata = {
     title: 'Treasures Blog || Treasure Uzoma',
     author: 'Treasure Uzoma',
     headerTitle: 'Treasure’s Blog',
-    description: 'A blog created with Next.js, Tailwind.css and contentlayer.',
+    description: 'Stay updated with Treasure Uzoma’s Blog.',
     language: 'en-us',
     theme: 'system', // system, dark or light
-    siteUrl: 'https://create-blog-with-nextjs.vercel.app', // your website URL
+    siteUrl: 'https://idolodevblog.vercel.app/', // your website URL
     siteLogo: '/logo.png',
     socialBanner: '/social-banner.png', // add social banner in the public folder
     email: 'treasureuzoma650@gmail.com', 

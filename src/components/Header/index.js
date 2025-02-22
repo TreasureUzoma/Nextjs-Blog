@@ -16,7 +16,8 @@ const toggle = () =>{
   setClick(!click)
 }
   return (
-    <header className="w-full p-4  px-5 sm:px-10 flex items-center justify-between">
+    <div className="fixed top-0 left-0 right-0 h-[5rem] z-50 bg-transparent bg-opacity-60 backdrop-filter backdrop-blur-md">
+    <header className="m-auto w-full p-4  px-5 sm:px-10 flex items-center justify-between">
         <Logo />
 
         <button className="inline-block sm:hidden z-50" onClick={toggle} aria-label="Hamburger Menu">
@@ -88,6 +89,7 @@ const toggle = () =>{
             <a href={siteMetadata.github} rel="noopener noreferrer" className="inline-block w-6 h-6 mr-4" aria-label="Check my profile on Github" target="_blank"><GithubIcon className="  hover:scale-125 transition-all ease duration-200 dark:fill-light" /></a>
         </div>
     </header>
+    </div>
   )
 }
 

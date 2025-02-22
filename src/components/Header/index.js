@@ -16,8 +16,8 @@ const toggle = () =>{
   setClick(!click)
 }
   return (
-    <div className="fixed top-0 left-0 right-0 h-[5rem] z-50 bg-transparent bg-opacity-60 backdrop-filter backdrop-blur-md">
-    <header className="m-auto w-full p-4  px-5 sm:px-10 flex items-center justify-between">
+    <div className="h-[5rem]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent bg-opacity-60 backdrop-filter backdrop-blur-md m-auto p-4 px-5 sm:px-10 flex items-center justify-between">
         <Logo />
 
         <button className="inline-block sm:hidden z-50" onClick={toggle} aria-label="Hamburger Menu">

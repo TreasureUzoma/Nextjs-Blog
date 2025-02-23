@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
     assetPrefix: "/blog-static",
-    basePath: "/blog",
     
     compiler: {
         removeConsole: process.env.NODE_ENV === "production" ? true : false

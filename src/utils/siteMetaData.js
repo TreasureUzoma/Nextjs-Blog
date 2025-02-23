@@ -6,7 +6,7 @@ const siteMetadata = {
     description: 'Stay updated with Treasure Uzoma’s Blog.',
     language: 'en-us',
     theme: 'system', // system, dark or light
-    siteUrl: 'https://idolodevblog.vercel.app/', // your website URL
+    siteUrl: 'https://treasureuzoma.netlify.app/blog', // your website URL
     siteLogo: '/logo.png',
     socialBanner: '/social-banner.png', // add social banner in the public folder
     email: 'treasureuzoma650@gmail.com', 

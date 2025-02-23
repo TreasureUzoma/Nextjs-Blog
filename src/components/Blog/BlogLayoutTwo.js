@@ -11,9 +11,9 @@ const BlogLayoutTwo = ({ blog }) => {
         className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"
       >
         <Image
-          src{`/blog/${blog.image.src}`}
+          src={blog.image.src}
           placeholder="blur"
-          blurDataURL={`/blog/${blog.image.src.blurDataURL}`}
+          blurDataURL={blog.image.blurDataURL}
           alt={blog.title}
           width={blog.image.width}
           height={blog.image.height}

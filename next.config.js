@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
     assetPrefix: "/blog-static",
+    
     async rewrites() {
         return {
             beforeFiles: [
@@ -10,6 +11,11 @@ module.exports = {
                 }
             ]
         };
+    },
+
+    images: {
+        path: "/blog-static/_next/",
+        loader: "default"
     },
 
     compiler: {

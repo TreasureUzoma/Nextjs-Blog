@@ -2,22 +2,6 @@
 module.exports = {
     assetPrefix: "/blog-static",
     
-    async rewrites() {
-        return {
-            beforeFiles: [
-                {
-                    source: "/blog-static/_next/:path+",
-                    destination: "/_next/:path+"
-                }
-            ]
-        };
-    },
-
-    images: {
-        path: "/blog-static/_next/",
-        loader: "default"
-    },
-
     compiler: {
         removeConsole: process.env.NODE_ENV === "production" ? true : false
     },

@@ -11,7 +11,7 @@ const siteMetadata = {
     socialBanner: '/social-banner.png', // add social banner in the public folder
     email: 'treasureuzoma650@gmail.com', 
     github: 'https://github.com/TreasureUzoma',
-    twitter: 'https://twitter.com/TreasureUzoma1',
+    twitter: 'https://twitter.com/idolodev',
     facebook: 'https://facebook.com',
     youtube: 'https://youtube.com/idolodev',
     linkedin: 'https://www.linkedin.com/in/treasure-uzoma-40a789260',

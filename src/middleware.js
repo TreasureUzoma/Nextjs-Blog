@@ -4,7 +4,9 @@ export function middleware(request) {
   // Get the current URL
   const url = request.nextUrl.clone()
   const hostname = request.headers.get("host") || ""
-
+  
+  // This Blog can be deployed as a MicroZone path on your website or as a standalone domain 
+  
   // Check if we're on the allowed domains
   const isAllowedDomain = hostname === "localhost:3000" || hostname === "idolodevblog.vercel.app"
 

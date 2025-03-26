@@ -25,7 +25,7 @@ const ViewCounter = ({ slug, noCount = false, showCount = true }) => {
 
   if (showCount) {
     return (
-      <div>{views} views</div>
+      <div>{numeral(views).format("0,0")} views</div>
     );
   } else {
     return null;

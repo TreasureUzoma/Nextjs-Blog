@@ -1,6 +1,6 @@
 "use server";
 
-import { db } from "@/lib/firebaseConfig";
+import { db } from "../lib/firebaseConfig";
 import { doc, updateDoc, getDoc, increment, setDoc, collection } from "firebase/firestore";
 import { cookies } from "next/headers";
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { incrementPageMetrics } from ".../actions/view-count";
+import { incrementPageMetrics } from "@/src/actions/view-count";
 
 const ViewCounter = ({ slug, noCount = false, showCount = true }) => {
   const [views, setViews] = useState(0);

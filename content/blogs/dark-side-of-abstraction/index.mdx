@@ -3,7 +3,7 @@ title: "Micro-Frontends with Next.js, Multi-Zones, and Turborepo: A Practical Gu
 description: "Learn how to build scalable and maintainable micro-frontends using Next.js, multi-zones for isolation, and Turborepo for efficient monorepo management. This guide covers architecture, implementation, and best practices."
 image: multizone-architecture.png
 publishedAt: 2025-08-14 13:00:00
-updatedAt: 2025-08-14 13:00:00
+updatedAt: 2025-08-14 19:00:00
 author: "idolodev"
 isPublished: true
 tags:
@@ -31,17 +31,17 @@ Think of it like a city made of neighborhoods. Each neighborhood has its own hou
 
 A practical example:
 
-* Your home page runs on **Next.js**
-* Your dashboard runs on **React**
-* Your blog runs on **Nuxt**
+- Your home page runs on **Next.js**
+- Your dashboard runs on **React**
+- Your blog runs on **Nuxt**
 
 They can all live on the same domain without users even realizing they are different apps.
 
 The biggest benefits are:
 
-* Teams can work independently without stepping on each other’s toes
-* You can mix different tech stacks
-* You can deploy parts of your site without redeploying everything
+- Teams can work independently without stepping on each other’s toes
+- You can mix different tech stacks
+- You can deploy parts of your site without redeploying everything
 
 The main drawback is complexity. Developers need to understand how to integrate multiple apps without breaking the user experience.
 
@@ -61,9 +61,9 @@ Next.js makes runtime integration easier with something called **multi-zones**.
 
 A **zone** is just a separate Next.js app. Multi-zones allow you to serve multiple Next.js apps under a single domain. For example:
 
-* `/` -> served by `web` app
-* `/dashboard` -> served by `dashboard` app
-* `/blog` -> served by `blog` app
+- `/` -> served by `web` app
+- `/dashboard` -> served by `dashboard` app
+- `/blog` -> served by `blog` app
 
 In `next.config.js` of each app, you define rewrites so that requests are routed to the correct app.
 
@@ -72,9 +72,9 @@ Example next-config from the **main app (/)**:
 ```js
 async rewrites() {
   return [
-   { source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
-   { source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
- ]
+    { source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
+    { source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
+  ]
 }
 ```
 
@@ -151,13 +151,13 @@ sizes="100vw"
 
 Since each app is independent, sharing state can be tricky. Luckily, because they run on the same domain, you have options:
 
-* **LocalStorage or IndexedDB**
+- **LocalStorage or IndexedDB**
 Works well for persistent data.
 
-* **Cookies**
+- **Cookies**
 Great for authentication and user preferences.
 
-* **Query parameters**
+- **Query parameters**
 Useful for passing temporary state.
 
 Example of reading shared auth data via cookies:
@@ -177,7 +177,10 @@ return token ? verifyToken(token.value) : null
 
 - Consistent environment variables across apps
 - Shared packages properly hoisted in Turborepo
-- Routing tested in local and staging environments with `<a>` tag not `<Link>`component
+- Routing tested in local and staging environments with `<a>` tag not `<Link>` component
+- Error boundaries implemented in each app
+
+
 <Image
 src="/blogs/multizone-architecture.png"
 width="718"
@@ -185,16 +188,17 @@ height="404"
 alt="Image"
 sizes="100vw"
 />
-- Error boundaries implemented in each app
+
 
 ---
 
 ## Recommended Resources
 
-* [Next.js Multi-Zones Documentation](https://nextjs.org/docs/advanced-features/multi-zones)
-* [Turborepo Monorepo Guide](https://turborepo.com)
+- [Next.js Multi-Zones Documentation](https://nextjs.org/docs/advanced-features/multi-zones)
+- [Turborepo Monorepo Guide](https://turborepo.com)
 
 ---
 
 ## Final Notes
+
 Think of this architecture as a **city with multiple districts**, each self-governed, but sharing the same postal system. Done well, it makes large frontend systems modular, maintainable, and team-friendly.

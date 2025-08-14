@@ -25,7 +25,7 @@ In this article, I’ll explain what micro-frontends are, why you might want to 
 
 ## What are Micro-Frontends?
 
-In simple terms, **micro-frontends** mean breaking a large, complex frontend app into **smaller apps** that can be developed, deployed, and maintained independently.
+In simple terms, **micro-frontends** means breaking a large, complex frontend app into **smaller apps** that can be developed, deployed, and maintained independently.
 
 Think of it like a city made of neighborhoods. Each neighborhood has its own houses, roads, and rules, but together they form a single city.
 
@@ -71,10 +71,10 @@ Example next-config from the **main app (/)**:
 
 ```js
 async rewrites() {
-return [
-{ source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
-{ source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
-]
+  return [
+   { source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
+   { source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
+ ]
 }
 ```
 
@@ -177,7 +177,14 @@ return token ? verifyToken(token.value) : null
 
 - Consistent environment variables across apps
 - Shared packages properly hoisted in Turborepo
-- Routing tested in local and staging environments with `a` tag not `Link`component
+- Routing tested in local and staging environments with `<a>` tag not `<Link>`component
+<Image
+src="/blogs/multizone-architecture.png"
+width="718"
+height="404"
+alt="Image"
+sizes="100vw"
+/>
 - Error boundaries implemented in each app
 
 ---
@@ -189,5 +196,5 @@ return token ? verifyToken(token.value) : null
 
 ---
 
-**Final Note:**
+## Final Notes
 Think of this architecture as a **city with multiple districts**, each self-governed, but sharing the same postal system. Done well, it makes large frontend systems modular, maintainable, and team-friendly.

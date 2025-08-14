@@ -1,20 +1,20 @@
---- 
+---
 title: "Micro-Frontends with Next.js, Multi-Zones, and Turborepo: A Practical Guide"
 description: "Learn how to build scalable and maintainable micro-frontends using Next.js, multi-zones for isolation, and Turborepo for efficient monorepo management. This guide covers architecture, implementation, and best practices."
 image: multizone-architecture.png
-publishedAt: 2025-08-14 13:00:00 
+publishedAt: 2025-08-14 13:00:00
 updatedAt: 2025-08-14 13:00:00
-author: "idolodev" 
-isPublished: true 
+author: "idolodev"
+isPublished: true
 tags:
- - micro-frontends 
- - nextjs 
- - turborepo 
- - monorepo 
- - multi-zone 
- - frontend architecture 
- - javascript 
- - typescript 
+ - micro-frontends
+ - nextjs
+ - turborepo
+ - monorepo
+ - multi-zone
+ - frontend architecture
+ - javascript
+ - typescript
  - react
 slug: microfrontend-with-nextjs
 ---
@@ -50,10 +50,10 @@ The main drawback is complexity. Developers need to understand how to integrate 
 Micro-frontends usually come in two flavors:
 
 1. **Build-time integration**
-   All micro-frontends are built together into one application. This is simple, but you lose the independence of separate deployments.
+All micro-frontends are built together into one application. This is simple, but you lose the independence of separate deployments.
 
 2. **Run-time integration**
-   Each app is built and deployed separately, then stitched together at runtime. This is more powerful and aligns with the micro-frontend philosophy.
+Each app is built and deployed separately, then stitched together at runtime. This is more powerful and aligns with the micro-frontend philosophy.
 
 Next.js makes runtime integration easier with something called **multi-zones**.
 
@@ -61,9 +61,9 @@ Next.js makes runtime integration easier with something called **multi-zones**.
 
 A **zone** is just a separate Next.js app. Multi-zones allow you to serve multiple Next.js apps under a single domain. For example:
 
-* `/` → served by `web` app
-* `/dashboard` → served by `dashboard` app
-* `/blog` → served by `blog` app
+* `/` -> served by `web` app
+* `/dashboard` -> served by `dashboard` app
+* `/blog` -> served by `blog` app
 
 In `next.config.js` of each app, you define rewrites so that requests are routed to the correct app.
 
@@ -71,10 +71,10 @@ Example next-config from the **main app (/)**:
 
 ```js
 async rewrites() {
-   return [
-     { source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
-     { source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
-   ]
+return [
+{ source: '/dashboard/:path*', destination: 'http://localhost:3001/:path*' },
+{ source: '/blog/:path*', destination: 'http://localhost:3002/:path*' },
+]
 }
 ```
 
@@ -91,7 +91,7 @@ That’s where Turborepo comes in. It lets you set up a monorepo where multiple 
   /blog
 /packages
   /ui
-  /utils
+ /utils
 ```
 
 Then you can import shared code like this:
@@ -138,11 +138,11 @@ destination: "https://dashboard.example.com/:path*"
 ## Architecture Overview
 
 <Image
-  src="/blogs/nextjs-turborepo.png"
-  width="718"
-  height="404"
-  alt="Image"
-  sizes="100vw"
+src="/blogs/nextjs-turborepo.png"
+width="718"
+height="404"
+alt="Image"
+sizes="100vw"
 />
 
 ---
@@ -152,13 +152,13 @@ destination: "https://dashboard.example.com/:path*"
 Since each app is independent, sharing state can be tricky. Luckily, because they run on the same domain, you have options:
 
 * **LocalStorage or IndexedDB**
-  Works well for persistent data.
+Works well for persistent data.
 
 * **Cookies**
-  Great for authentication and user preferences.
+Great for authentication and user preferences.
 
 * **Query parameters**
-  Useful for passing temporary state.
+Useful for passing temporary state.
 
 Example of reading shared auth data via cookies:
 
@@ -166,8 +166,8 @@ Example of reading shared auth data via cookies:
 import { cookies } from "next/headers"
 
 export async function getUser() {
-  const token = cookies().get("auth_token")
-  return token ? verifyToken(token.value) : null
+const token = cookies().get("auth_token")
+return token ? verifyToken(token.value) : null
 }
 ```
 

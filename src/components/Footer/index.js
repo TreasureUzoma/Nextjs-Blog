@@ -76,7 +76,7 @@ const Footer = () => {
         </span>
         <div className="text-center">
           Made with ❤️ by{" "}
-          <a href="https://treasureuzoma.netlify.app" className="underline" target="_blank">
+          <a href="https://idolo.dev" className="underline" target="_blank">
             Treasure Uzoma
           </a>
         </div>

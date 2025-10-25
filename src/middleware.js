@@ -11,7 +11,7 @@ export function middleware(request) {
   const isAllowedDomain =
     hostname === "localhost:3000" ||
     hostname === "idolodevblog.vercel.app" ||
-    hostname === "https://idolodevblog.vercel.app";
+    hostname === "https://blog.idolo.dev";
 
   if (!isAllowedDomain) {
     return NextResponse.next();

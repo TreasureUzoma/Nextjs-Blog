@@ -7,8 +7,8 @@ updatedAt: 2025-12-11 16:00:00
 author: "Treasure Uzoma"
 isPublished: true
 tags:
-  - next.js
   - sveltekit
+  - next.js
   - dx
   - javascript
   - typescript
@@ -33,7 +33,7 @@ When we started React, we had to learn **JSX**, the syntax extension that lets u
 
 Svelte takes a different approach.
 
-To make a component, you just create a `.svelte` file, write your HTML, and the [Svelte compiler](https://svelte.dev/docs/svelte/compiler) turns it into highly optimized JavaScript. No wrapper function, no return statement, no JSX.
+To make a component, you just create a `.svelte` file, write your HTML, and the [Svelte compiler](https://svelte.dev/docs/svelte/svelte-compiler) turns it into highly optimized JavaScript. No wrapper function, no return statement, no JSX.
 
 And because everything is closer to native HTML, the learning curve feels smoother. Even the **rafce** VS Code snippet becomes unnecessary.
 
@@ -85,7 +85,7 @@ React (and Vue) use a Virtual DOM. It used to be a big performance innovation, b
 SvelteKit avoids the Virtual DOM entirely. It compiles components into tiny, optimized JavaScript that updates the DOM precisely where needed.
 
 More on that here:
-[https://svelte.dev/docs/svelte/overview#how-svelte-works](https://svelte.dev/docs/svelte/overview#how-svelte-works)
+[https://svelte.dev/docs/kit/introduction#What-is-Svelte](https://svelte.dev/docs/kit/introduction#What-is-Svelte)
 
 This is why Svelte apps ship far less JavaScript compared to React apps.
 
@@ -101,9 +101,9 @@ A fair argument. The React ecosystem is unmatched:
 But SvelteKit isn't empty:
 
 - Shadcn for Svelte exists: [https://www.shadcn-svelte.com/](https://www.shadcn-svelte.com/)
-- Fullstack routing and API endpoints built-in: [https://kit.svelte.dev/docs/routing](https://kit.svelte.dev/docs/routing)
+- Fullstack routing and API endpoints built-in: [https://svelte.dev/docs/kit/routing](https://svelte.dev/docs/kit/routing)
 - TanStack Query for Svelte: [https://tanstack.com/query/latest/docs/framework/svelte/overview](https://tanstack.com/query/latest/docs/framework/svelte/overview)
-- Stores are built-in: [https://svelte.dev/docs/svelte-store](https://svelte.dev/docs/svelte-store)
+- Stores are built-in: [https://svelte.dev/docs/svelte/stores](https://svelte.dev/docs/svelte/stores)
 
 And honestly, many libraries work with Svelte just fine because they’re framework-agnostic.
 
@@ -118,7 +118,7 @@ SvelteKit is production-ready and used by companies like:
 - Storyblok
 - Square Enix
 
-Showcase: [https://svelte.dev/showcase](https://svelte.dev/showcase)
+Showcase: [https://madewithsvelte.com](https://madewithsvelte.com)
 
 But React still owns the job market. Svelte is growing fast but isn’t yet the default choice for enterprises. You'll still find far more React roles than Svelte roles.
 
@@ -129,15 +129,7 @@ SvelteKit is great, but here are the actual issues I’ve run into:
 1. **Random white screens during development**
    Usually caused by Vite HMR crashes. Not a Svelte issue, but it happens.
 
-2. **File-based routing takes some getting used to**
-   SvelteKit keeps pages (`+page.svelte`) and API endpoints (`+server.ts`) **in the same folder**.
-   This isn’t a disadvantage — it’s actually powerful — but if you're coming from Next.js, the structure feels unfamiliar at first.
-
-3. **Error boundaries aren’t as polished as Next.js**
-   They work, but the DX around nested layouts and error isolation isn’t as mature yet.
-   Docs: [https://kit.svelte.dev/docs/errors](https://kit.svelte.dev/docs/errors)
-
-4. **Smaller ecosystem**
+2. **Smaller ecosystem**
    If you need a niche React-only library, you're on your own. The ecosystem is growing, but React is still miles ahead.
 
 None of these are dealbreakers, just things worth knowing before switching.
@@ -154,7 +146,3 @@ Simpler mental model.
 React is still great. Next.js is still great. But SvelteKit made me realize we might have accepted complexity for too long.
 
 If you're bored, curious, or tired of boilerplate, SvelteKit is absolutely worth trying.
-
-```
-
-```

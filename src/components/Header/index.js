@@ -73,7 +73,7 @@ const Header = () => {
             top: click ? "1rem" : "-5rem",
           }}
         >
-          <Link href="/" className="mr-2">
+          <Link href="/blog" className="mr-2">
             Home
           </Link>
           <Link href="/#about" className="mx-2">

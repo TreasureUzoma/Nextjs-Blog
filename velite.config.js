@@ -1,15 +1,15 @@
-import { defineConfig, s } from 'velite'
-import GithubSlugger from "github-slugger"
-import readingTime from "reading-time"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
-import rehypePrettyCode from "rehype-pretty-code"
-import rehypeSlug from "rehype-slug"
-import remarkGfm from "remark-gfm"
+import { defineConfig, s } from "velite";
+import GithubSlugger from "github-slugger";
+import readingTime from "reading-time";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 const codeOptions = {
-  theme: 'github-dark',
+  theme: "github-dark",
   grid: false,
-}
+};
 
 // Define the blog schema
 const blog = s
@@ -17,7 +17,7 @@ const blog = s
     title: s.string(),
     publishedAt: s.isodate(),
     updatedAt: s.isodate(),
-    description: s.string(), 
+    description: s.string(),
     image: s.image(),
     isPublished: s.boolean().default(true),
     author: s.string(),
@@ -26,31 +26,31 @@ const blog = s
     toc: s.toc(),
     slug: s.string(),
   })
-  .transform(data => {
+  .transform((data) => {
     return {
       ...data,
-      url: `/blogs/${data.slug}`,
+      url: `/blog/${data.slug}`,
       readingTime: readingTime(data.body),
-    //   toc: headings,
+      //   toc: headings,
       image: {
         ...data.image,
-        src: data.image.src.replace("/static", "/blogs"),
+        src: data.image.src.replace("/static", "/blog"),
       },
-    }
-  })
+    };
+  });
 
 export default defineConfig({
-  root: 'content',
+  root: "content",
   collections: {
     blogs: {
-      name: 'Blog',
-      pattern: 'blogs/**/*.mdx',
+      name: "Blog",
+      pattern: "blog/**/*.mdx",
       schema: blog,
     },
   },
   output: {
-    data: '.velite/generated',
-    assets: 'public/blogs',
+    data: ".velite/generated",
+    assets: "public/blog",
     clean: true,
   },
   // Add MDX plugins
@@ -59,7 +59,7 @@ export default defineConfig({
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: "append" }],
-      [rehypePrettyCode, codeOptions]
-    ]
-  }
-})
+      [rehypePrettyCode, codeOptions],
+    ],
+  },
+});

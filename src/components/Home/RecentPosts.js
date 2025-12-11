@@ -5,7 +5,7 @@ import BlogLayoutThree from "../Blog/BlogLayoutThree";
 
 const RecentPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
-  
+
   return (
     <section className="w-full  mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">
       <div className="w-full flex  justify-between">
@@ -13,7 +13,7 @@ const RecentPosts = ({ blogs }) => {
           Recent Posts
         </h2>
         <Link
-          href="/blog/categories/all"
+          href="/categories/all"
           className="inline-block font-medium text-accent dark:text-accentDark underline underline-offset-2      text-base md:text-lg"
         >
           view all

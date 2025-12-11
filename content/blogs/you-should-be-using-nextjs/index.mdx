@@ -6,148 +6,152 @@ publishedAt: 2025-04-01 13:00:00
 updatedAt: 2025-04-02 13:00:00
 author: "idolodev"
 isPublished: true
-tags: 
-- next.js
-- react.js
-- best framework 
-- nextjs vs remix vs gatsby
+tags:
+  - next.js
+  - react.js
+  - framework
+  - remix
+  - gatsby
+  - dx
 slug: you-should-be-using-nextjs
 ---
 
 So you’re a **developer**, most likely a **frontend developer**, and you’re thinking: “Do I need to learn **Next.js**?” “Isn’t **React.js** enough?” Or maybe you’re just curious and hoping to learn something new. If so, this blog is for you.
 
-**Caution**: I’m not writing out of bias, even though I’m tagged as a Next.js fanboy. I’m just giving my honest reasons.  
+**Caution**: I’m not writing out of bias, even though I’m tagged as a Next.js fanboy. I’m just giving my honest reasons.
 
-Firstly, **Next.js** is a **React.js framework**. It fixes things React overlooked or never cared to fix. It has a ton of features React.js will likely never have. Plus, it has **fullstack capabilities**, allowing you to create fullstack apps with **server actions and API routes**. More on this later.  
+Firstly, **Next.js** is a **React.js framework**. It fixes things React overlooked or never cared to fix. It has a ton of features React.js will likely never have. Plus, it has **fullstack capabilities**, allowing you to create fullstack apps with **server actions and API routes**. More on this later.
 
-With the latest update, you can now create a Next.js app **with only API routes** using the `--api` flag during installation. It also comes with **Node.js middlewares** (currently experimental at the time of writing this blog), proving that Next.js is pushing hard to improve its backend features.  
+With the latest update, you can now create a Next.js app **with only API routes** using the `--api` flag during installation. It also comes with **Node.js middlewares** (currently experimental at the time of writing this blog), proving that Next.js is pushing hard to improve its backend features.
 
-But then, why should you even learn or build with Next.js when you can get better performance with Reactjs +  Express.js? Let’s dive in.  
+But then, why should you even learn or build with Next.js when you can get better performance with Reactjs + Express.js? Let’s dive in.
 
 ---
 
-## Why React.js Alone Isn’t Enough  
+## Why React.js Alone Isn’t Enough
 
-As I said earlier, **React.js is just incomplete**.  
+As I said earlier, **React.js is just incomplete**.
 
 Think about it—there’s a reason we learned TypeScript: **JavaScript shipped without type safety**, making it too loose. React.js solved JavaScript issues by introducing things like **faster routing, the virtual DOM, and a structured component-based approach** (Check out React’s full list of features [here](https://react.dev).)
 
 One library/framework can’t do it all.
 
-But when it comes to **building modern, fast, scalable applications**, React alone isn’t enough. You’d still need a framework to handle things like:  
+But when it comes to **building modern, fast, scalable applications**, React alone isn’t enough. You’d still need a framework to handle things like:
 
-- **SSR (Server-Side Rendering)** for better performance  
-- **Code splitting** to load only what’s needed  
-- **Faster reloading and seamless transitions**  
+- **SSR (Server-Side Rendering)** for better performance
+- **Code splitting** to load only what’s needed
+- **Faster reloading and seamless transitions**
 - And lots of other [features](https://nextjs.org).
 
-That’s where **Next.js** comes in. Other React frameworks like **Remix and Gatsby** also try to solve these issues, but Next.js simply does it best.  
+That’s where **Next.js** comes in. Other React frameworks like **Remix and Gatsby** also try to solve these issues, but Next.js simply does it best.
 
 ---
 
-## Routing in Next.js  
+## Routing in Next.js
 
-While Next.js’ app router has been controversial, **routing in Next.js is much simpler and more intuitive** than React Router.  
+While Next.js’ app router has been controversial, **routing in Next.js is much simpler and more intuitive** than React Router.
 
-Next.js uses **file-based routing**, meaning your folder structure defines your routes. No need to manually set up a routing system—it’s all automatic.  
+Next.js uses **file-based routing**, meaning your folder structure defines your routes. No need to manually set up a routing system—it’s all automatic.
 
-Compare this to React Router, which **changes syntax every other full moon**. Every update seems to break something. With Next.js, routing stays clean, predictable, and easy to maintain.  
-
----
-
-## Native Support for TailwindCSS, TypeScript, and ESLint  
-
-Setting up a **React.js project from scratch** is honestly a pain.  
-
-- You need **Webpack** (or Vite).  
-- You need to manually add **Tailwind support**.  
-- Same situation with **Eslint**.  
-- You have to install **React Router** for navigation.  
-
-**With Next.js, all of these are built-in** (or require just a single command). You save hours of setup time and can **start coding immediately**.  
+Compare this to React Router, which **changes syntax every other full moon**. Every update seems to break something. With Next.js, routing stays clean, predictable, and easy to maintain.
 
 ---
 
-## Why You Need a React Framework in 2025  
+## Native Support for TailwindCSS, TypeScript, and ESLint
 
-If you’re still skeptical about using a framework, let’s be real:  
+Setting up a **React.js project from scratch** is honestly a pain.
 
-**The industry has moved forward.**  
+- You need **Webpack** (or Vite).
+- You need to manually add **Tailwind support**.
+- Same situation with **Eslint**.
+- You have to install **React Router** for navigation.
 
-- Most big companies **don’t build plain React apps anymore**—they use frameworks like Next.js.  
-- Hiring managers expect you to know at least one React framework.  
-- Modern development is **not just about UI**—it’s about performance, scalability, and DX (Developer Experience).  
-
-If you still don’t see why you need a framework in 2025, you’re beyond redemption. 😭  
-
-Now, for those of you who get it, the real argument **isn’t whether to use a framework—it’s which one is best**.  
+**With Next.js, all of these are built-in** (or require just a single command). You save hours of setup time and can **start coding immediately**.
 
 ---
 
-## Next.js vs. Remix vs. Gatsby  
+## Why You Need a React Framework in 2025
 
-Before we even compare, you should know: **Vercel (the company behind Next.js) actually hires top-tier developers to improve it**. That means **faster updates, better support, and more cutting-edge features**.  
+If you’re still skeptical about using a framework, let’s be real:
 
-| Feature           | Next.js | Remix | Gatsby |
-|------------------|--------|-------|--------|
-| **Performance** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **SSR Support** | ✅ | ✅ | ❌ |
-| **Static Site Generation (SSG)** | ✅ | ✅ | ✅ |
-| **API Routes** | ✅ | ❌ | ❌ |
-| **Built-in Middleware** | ✅ | ❌ | ❌ |
-| **Best for SEO** | ✅ | ✅ | ❌ |
-| **Developer Experience** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
-| **Company Support** | Vercel (Strong) | Shopify (New) | Netlify (Limited) |
+**The industry has moved forward.**
 
-Looking at this, **Next.js is clearly the best option**. 😏  
+- Most big companies **don’t build plain React apps anymore**—they use frameworks like Next.js.
+- Hiring managers expect you to know at least one React framework.
+- Modern development is **not just about UI**—it’s about performance, scalability, and DX (Developer Experience).
+
+If you still don’t see why you need a framework in 2025, you’re beyond redemption. 😭
+
+Now, for those of you who get it, the real argument **isn’t whether to use a framework—it’s which one is best**.
 
 ---
 
-## Next.js is a Fullstack Framework  
+## Next.js vs. Remix vs. Gatsby
 
-This is another area where **React purists** start crying.  
+Before we even compare, you should know: **Vercel (the company behind Next.js) actually hires top-tier developers to improve it**. That means **faster updates, better support, and more cutting-edge features**.
+
+| Feature                          | Next.js         | Remix         | Gatsby            |
+| -------------------------------- | --------------- | ------------- | ----------------- |
+| **Performance**                  | ⭐⭐⭐⭐⭐      | ⭐⭐⭐⭐      | ⭐⭐⭐            |
+| **SSR Support**                  | ✅              | ✅            | ❌                |
+| **Static Site Generation (SSG)** | ✅              | ✅            | ✅                |
+| **API Routes**                   | ✅              | ❌            | ❌                |
+| **Built-in Middleware**          | ✅              | ❌            | ❌                |
+| **Best for SEO**                 | ✅              | ✅            | ❌                |
+| **Developer Experience**         | ⭐⭐⭐⭐⭐      | ⭐⭐⭐        | ⭐⭐              |
+| **Company Support**              | Vercel (Strong) | Shopify (New) | Netlify (Limited) |
+
+Looking at this, **Next.js is clearly the best option**. 😏
+
+---
+
+## Next.js is a Fullstack Framework
+
+This is another area where **React purists** start crying.
 
 With **Next.js, you can:**
-- Create **secure API routes**  
-- Use **server actions** to execute backend logic  
-- Manage **cookies, authentication, and session storage**  
-- Deploy fullstack apps **without needing a separate backend**  
 
-If you’re a frontend developer wanting to build **simple but secure fullstack apps**, **Next.js is perfect**.  
+- Create **secure API routes**
+- Use **server actions** to execute backend logic
+- Manage **cookies, authentication, and session storage**
+- Deploy fullstack apps **without needing a separate backend**
 
-For example, you can:  
-- Use **NextAuth.js** for authentication  
-- Use **PostgreSQL or Prisma** as a database  
-- Deploy easily on **Vercel**  
+If you’re a frontend developer wanting to build **simple but secure fullstack apps**, **Next.js is perfect**.
 
----
+For example, you can:
 
-## More Reasons to Use Next.js  
-
-- **Massive community support** → Tons of tutorials, plugins, and open-source packages.  
-- **Scalability** → Whether you’re building a personal blog or an enterprise app, Next.js can handle it.  
-- **Edge computing** → Leverage **serverless functions and edge deployments** for insane performance.  
-
-It’s honestly a no-brainer.  
+- Use **NextAuth.js** for authentication
+- Use **PostgreSQL or Prisma** as a database
+- Deploy easily on **Vercel**
 
 ---
 
-## How to Get Started with Next.js  
+## More Reasons to Use Next.js
 
-By now, you’re probably convinced that Next.js is the way to go. So, how do you start?  
+- **Massive community support** → Tons of tutorials, plugins, and open-source packages.
+- **Scalability** → Whether you’re building a personal blog or an enterprise app, Next.js can handle it.
+- **Edge computing** → Leverage **serverless functions and edge deployments** for insane performance.
 
-- Read the official **[Next.js Docs](https://nextjs.org/docs)**  
-- Watch **JavaScript Mastery’s Next.js tutorials** on YouTube  
-- **Build projects every week**—practice is key!  
+It’s honestly a no-brainer.
 
 ---
 
-## Conclusion  
+## How to Get Started with Next.js
 
-Next.js isn’t just another framework—it’s the **best way to build React apps** in 2025.  
+By now, you’re probably convinced that Next.js is the way to go. So, how do you start?
 
-If you’re a React developer, **learning Next.js isn’t optional anymore—it’s a necessity**.  
+- Read the official **[Next.js Docs](https://nextjs.org/docs)**
+- Watch **JavaScript Mastery’s Next.js tutorials** on YouTube
+- **Build projects every week**—practice is key!
 
-The faster you start, the better your projects (and job prospects) will be.  
+---
 
-**See you in the Next.js world!** 🚀  
+## Conclusion
+
+Next.js isn’t just another framework—it’s the **best way to build React apps** in 2025.
+
+If you’re a React developer, **learning Next.js isn’t optional anymore—it’s a necessity**.
+
+The faster you start, the better your projects (and job prospects) will be.
+
+**See you in the Next.js world!** 🚀

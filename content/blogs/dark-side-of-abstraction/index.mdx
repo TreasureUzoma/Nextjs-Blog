@@ -7,15 +7,16 @@ updatedAt: 2025-08-14 19:00:00
 author: "idolodev"
 isPublished: true
 tags:
- - micro-frontends
- - nextjs
- - turborepo
- - monorepo
- - multi-zone
- - frontend architecture
- - javascript
- - typescript
- - react
+  - micro-frontends
+  - next.js
+  - turborepo
+  - monorepo
+  - multi-zone
+  - frontend architecture
+  - javascript
+  - typescript
+  - react.js
+  - dx
 slug: microfrontend-with-nextjs
 ---
 
@@ -50,10 +51,10 @@ The main drawback is complexity. Developers need to understand how to integrate 
 Micro-frontends usually come in two flavors:
 
 1. **Build-time integration**
-All micro-frontends are built together into one application. This is simple, but you lose the independence of separate deployments.
+   All micro-frontends are built together into one application. This is simple, but you lose the independence of separate deployments.
 
 2. **Run-time integration**
-Each app is built and deployed separately, then stitched together at runtime. This is more powerful and aligns with the micro-frontend philosophy.
+   Each app is built and deployed separately, then stitched together at runtime. This is more powerful and aligns with the micro-frontend philosophy.
 
 Next.js makes runtime integration easier with something called **multi-zones**.
 
@@ -97,7 +98,7 @@ That’s where Turborepo comes in. It lets you set up a monorepo where multiple 
 Then you can import shared code like this:
 
 ```jsx
-import { Button } from "@repo/ui/components/ui/button"
+import { Button } from "@repo/ui/components/ui/button";
 ```
 
 ## Implementing Micro-Frontends with Next.js, Multi-Zones, and Turborepo
@@ -120,13 +121,13 @@ npx create-next-app@latest apps/blog
 Local:
 
 ```js
-destination: "http://localhost:3001/:path*"
+destination: "http://localhost:3001/:path*";
 ```
 
 Production:
 
 ```js
-destination: "https://dashboard.example.com/:path*"
+destination: "https://dashboard.example.com/:path*";
 ```
 
 **4. Extract shared code into `/packages/ui`**
@@ -138,11 +139,11 @@ destination: "https://dashboard.example.com/:path*"
 ## Architecture Overview
 
 <Image
-src="/blogs/nextjs-turborepo.png"
-width="718"
-height="404"
-alt="Image"
-sizes="100vw"
+  src="/blogs/nextjs-turborepo.png"
+  width="718"
+  height="404"
+  alt="Image"
+  sizes="100vw"
 />
 
 ---
@@ -152,22 +153,22 @@ sizes="100vw"
 Since each app is independent, sharing state can be tricky. Luckily, because they run on the same domain, you have options:
 
 - **LocalStorage or IndexedDB**
-Works well for persistent data.
+  Works well for persistent data.
 
 - **Cookies**
-Great for authentication and user preferences.
+  Great for authentication and user preferences.
 
 - **Query parameters**
-Useful for passing temporary state.
+  Useful for passing temporary state.
 
 Example of reading shared auth data via cookies:
 
 ```js
-import { cookies } from "next/headers"
+import { cookies } from "next/headers";
 
 export async function getUser() {
-const token = cookies().get("auth_token")
-return token ? verifyToken(token.value) : null
+  const token = cookies().get("auth_token");
+  return token ? verifyToken(token.value) : null;
 }
 ```
 
@@ -180,15 +181,13 @@ return token ? verifyToken(token.value) : null
 - Routing tested in local and staging environments with `<a>` tag not `<Link>` component
 - Error boundaries implemented in each app
 
-
 <Image
-src="/blogs/multizone-architecture.png"
-width="718"
-height="404"
-alt="Image"
-sizes="100vw"
+  src="/blogs/multizone-architecture.png"
+  width="718"
+  height="404"
+  alt="Image"
+  sizes="100vw"
 />
-
 
 ---
 

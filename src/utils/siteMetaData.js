@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: "https://idolo.dev/blog", // your website URL
   siteLogo: "/logo.png",
   socialBanner: "/social-banner.png", // add social banner in the public folder
-  email: "treasureuzoma650@gmail.com",
+  email: "hello@idolo.dev",
   github: "https://github.com/TreasureUzoma",
   twitter: "https://twitter.com/idolodev",
   facebook: "https://facebook.com",

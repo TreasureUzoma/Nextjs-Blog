@@ -1,0 +1,160 @@
+---
+title: "Next.js Is Good...But Have You Tried SvelteKit?"
+description: "Dive into my personal experience building with both frameworks."
+image: avatar.png
+publishedAt: 2024-08-24 13:00:00
+updatedAt: 2025-02-22 13:00:00
+author: "Treasure Uzoma"
+isPublished: true
+tags:
+  - next.js
+  - sveltekit
+  - dx
+  - javascript
+  - typescript
+slug: nextjs-is-good-but-have-you-tried-sveltekit
+---
+
+I got bored… again. So I did what any reasonable developer does: I learned a new framework.
+
+After years of building with React.js and Next.js I picked up Svelte and SvelteKit. It’s a frontend framework that helps you build fullstack apps in the simplest way ever.
+
+Here’s why SvelteKit feels like the future (and why you should try it too).
+
+## SvelteKit is built with simplicity at its core
+
+I kept seeing this headline everywhere when researching Svelte before picking it up, but I didn’t really get it. React and Next.js are already easy. How can something be simpler?
+
+Turns out it can.
+
+### It's Just HTML
+
+When we started React, we had to learn **JSX**, the syntax extension that lets us write HTML-like code inside JavaScript. JSX is part of the [React](https://react.dev/) ecosystem and is handled by tools like [Babel](https://babeljs.io/).
+
+Svelte takes a different approach.
+
+To make a component, you just create a `.svelte` file, write your HTML, and the [Svelte compiler](https://svelte.dev/docs/svelte/compiler) turns it into highly optimized JavaScript. No wrapper function, no return statement, no JSX.
+
+And because everything is closer to native HTML, the learning curve feels smoother. Even the **rafce** VS Code snippet becomes unnecessary.
+
+### State and Reactivity
+
+State and reactivity in SvelteKit are extremely simple.
+
+React version:
+
+```jsx
+import { useState } from "react";
+
+export default function MyPage() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount((prev) => prev + 1)}>
+        Increment Count
+      </button>
+    </div>
+  );
+}
+```
+
+Svelte version:
+
+```svelte
+<script>
+  let count = $state(0)
+</script>
+
+<div>
+  <h1>{count}</h1>
+  <button onclick={() => count++}>Increment Count</button>
+</div>
+```
+
+It feels like writing normal JavaScript.
+No `setState`. No hooks. You just reassign variables and Svelte updates the UI.
+
+This is why Svelte feels relatable to anyone coming from plain HTML/CSS/JS.
+
+### DOM vs Virtual DOM
+
+React (and Vue) use a Virtual DOM. It used to be a big performance innovation, but in 2025, it's extra machinery that often isn’t needed.
+
+SvelteKit avoids the Virtual DOM entirely. It compiles components into tiny, optimized JavaScript that updates the DOM precisely where needed.
+
+More on that here:
+[https://svelte.dev/docs/svelte/overview#how-svelte-works](https://svelte.dev/docs/svelte/overview#how-svelte-works)
+
+This is why Svelte apps ship far less JavaScript compared to React apps.
+
+### But React Has All the Libraries
+
+A fair argument. The React ecosystem is unmatched:
+
+- Component systems: [Shadcn UI](https://ui.shadcn.com/)
+- Animations: [Framer Motion](https://www.framer.com/motion/)
+- Fullstack framework: [Next.js](https://nextjs.org/)
+- Data fetching/caching: [TanStack Query](https://tanstack.com/query/latest)
+
+But SvelteKit isn't empty:
+
+- Shadcn for Svelte exists: [https://www.shadcn-svelte.com/](https://www.shadcn-svelte.com/)
+- Fullstack routing and API endpoints built-in: [https://kit.svelte.dev/docs/routing](https://kit.svelte.dev/docs/routing)
+- TanStack Query for Svelte: [https://tanstack.com/query/latest/docs/framework/svelte/overview](https://tanstack.com/query/latest/docs/framework/svelte/overview)
+- Stores are built-in: [https://svelte.dev/docs/svelte-store](https://svelte.dev/docs/svelte-store)
+
+And honestly, many libraries work with Svelte just fine because they’re framework-agnostic.
+
+### Reliability and Jobs
+
+SvelteKit is production-ready and used by companies like:
+
+- Apple
+- The Guardian
+- Brave
+- Rakuten
+- Storyblok
+- Square Enix
+
+Showcase: [https://svelte.dev/showcase](https://svelte.dev/showcase)
+
+But React still owns the job market. Svelte is growing fast but isn’t yet the default choice for enterprises. You'll still find far more React roles than Svelte roles.
+
+### Downsides I’ve Personally Experienced
+
+SvelteKit is great, but here are the actual issues I’ve run into:
+
+1. **Random white screens during development**
+   Usually caused by Vite HMR crashes. Not a Svelte issue, but it happens.
+
+2. **File-based routing takes some getting used to**
+   SvelteKit keeps pages (`+page.svelte`) and API endpoints (`+server.ts`) **in the same folder**.
+   This isn’t a disadvantage — it’s actually powerful — but if you're coming from Next.js, the structure feels unfamiliar at first.
+
+3. **Error boundaries aren’t as polished as Next.js**
+   They work, but the DX around nested layouts and error isolation isn’t as mature yet.
+   Docs: [https://kit.svelte.dev/docs/errors](https://kit.svelte.dev/docs/errors)
+
+4. **Smaller ecosystem**
+   If you need a niche React-only library, you're on your own. The ecosystem is growing, but React is still miles ahead.
+
+None of these are dealbreakers, just things worth knowing before switching.
+
+## Final Thoughts
+
+SvelteKit feels like what frontend development should have always been.
+Closer to the platform.
+Less boilerplate.
+More readable code.
+Smaller bundles.
+Simpler mental model.
+
+React is still great. Next.js is still great. But SvelteKit made me realize we might have accepted complexity for too long.
+
+If you're bored, curious, or tired of boilerplate, SvelteKit is absolutely worth trying.
+
+```
+
+```

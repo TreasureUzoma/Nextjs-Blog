@@ -7,6 +7,7 @@ const siteMetadata = {
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://idolo.dev/blog", // your website URL
+  rootUrl: "https://idolo.dev",
   siteLogo: "/logo.png",
   socialBanner: "/social-banner.png", // add social banner in the public folder
   email: "hello@idolo.dev",

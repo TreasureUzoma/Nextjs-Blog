@@ -24,6 +24,7 @@ const blog = s
     tags: s.array(s.string()),
     body: s.mdx(),
     toc: s.toc(),
+    secondaryImage: s.image().optional(),
     slug: s.string(),
   })
   .transform((data) => {
@@ -36,6 +37,12 @@ const blog = s
         ...data.image,
         src: data.image.src.replace("/static", "/blog"),
       },
+      secondaryImage: data.secondaryImage
+        ? {
+            ...data.secondaryImage,
+            src: data.secondaryImage.src.replace("/static", "/blog"),
+          }
+        : undefined,
     };
   });
 

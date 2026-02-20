@@ -1,6 +1,6 @@
 // please update required information
 const siteMetadata = {
-  title: "Treasures Blog || Treasure Uzoma",
+  title: "idolodev Blog | idolo.dev/blog",
   author: "Treasure Uzoma",
   headerTitle: "Treasure’s Blog",
   description: "Stay updated with Treasure Uzoma’s Blog.",

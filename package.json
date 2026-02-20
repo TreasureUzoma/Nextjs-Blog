@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "content": "velite --clean"
+    "content": "velite --clean && node scripts/copy-assets.js"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.12.0",

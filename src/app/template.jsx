@@ -11,7 +11,7 @@ export default function Template({ children }) {
     <div>
       {children}
       <Analytics
-        url="https://supametrics-go-server.onrender.com/api/v1/analytics/log"
+        url="https://supametrics-go-server.onrender.com"
         client="supm_2d9d2d3aadf1bacdf5677e0a3d2fa22a"
       />
     </div>

@@ -1,4 +1,5 @@
-// app/template.tsx
+"use client";
+
 import dynamic from "next/dynamic";
 
 const Analytics = dynamic(() => import("supametrics"), {
@@ -11,7 +12,7 @@ export default function Template({ children }) {
       {children}
       <Analytics
         url="https://supametrics-go-server.onrender.com/api/v1/analytics/log"
-        client="supm_11a44d6ab609bd02eeb17cb0ab83afc1"
+        client="supm_2d9d2d3aadf1bacdf5677e0a3d2fa22a"
       />
     </div>
   );

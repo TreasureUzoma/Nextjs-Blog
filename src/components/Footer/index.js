@@ -1,45 +1,87 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "../Icons";
-import Link from "next/link";
 import siteMetadata from "@/src/utils/siteMetaData";
+import { joinNewsletter } from "@/src/actions/join-newsletter";
 
 const Footer = () => {
+  const [res, setRes] = useState(null);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setError,
+    formState: { errors, isSubmitting },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await joinNewsletter(data.email);
+      setRes(response);
+    } catch (error) {
+      setError("email", {
+        type: "server",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      });
+    }
+  };
 
   return (
     <footer className="mt-16 rounded-2xl bg-dark dark:bg-white m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark">
       <h3 className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
         Interesting Stories | Updates | Guides
       </h3>
+
       <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
-        Subscribe to learn about new technology and updates. Join over 5000+
-        members community to stay up to date with latest news.
+        Subscribe to learn about new technology and updates. Join our newsletter
+        to stay up to date with latest news.
       </p>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
+        className="mt-6 w-fit sm:min-w-[384px]"
       >
-        <input
-          type="email"
-          placeholder="Enter your email"
-          {...register("email", { required: true, maxLength: 80 })}
-          className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
-        />
+        {res ? (
+          <p className="text-green-500 text-sm text-center">{res.message}</p>
+        ) : (
+          <>
+            <div className="flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                {...register("email", {
+                  required: "Email is required",
+                  maxLength: {
+                    value: 80,
+                    message: "Email must be less than 80 characters",
+                  },
+                })}
+                className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
+              />
 
-        <input
-          type="submit"
-          className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
-        />
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1 disabled:opacity-50"
+              >
+                {isSubmitting ? "..." : "Subscribe"}
+              </button>
+            </div>
+
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-2">
+                {errors.email.message}
+              </p>
+            )}
+          </>
+        )}
       </form>
+
       <div className="flex items-center mt-8">
         <a
           href={siteMetadata.linkedin}
@@ -50,6 +92,7 @@ const Footer = () => {
         >
           <LinkedinIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
+
         <a
           href={siteMetadata.twitter}
           className="inline-block w-6 h-6 mr-4"
@@ -59,6 +102,7 @@ const Footer = () => {
         >
           <TwitterIcon className="hover:scale-125 transition-all ease duration-200" />
         </a>
+
         <a
           href={siteMetadata.github}
           className="inline-block w-6 h-6 mr-4 fill-light"
@@ -66,17 +110,23 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GithubIcon className="fill-light dark:fill-dark  hover:scale-125 transition-all ease duration-200" />
+          <GithubIcon className="fill-light dark:fill-dark hover:scale-125 transition-all ease duration-200" />
         </a>
       </div>
 
-      <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
+      <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between">
         <span className="text-center">
           &copy;{new Date().getFullYear()} Treasure Uzoma. All rights reserved.
         </span>
+
         <div className="text-center">
           Made with ❤️ by{" "}
-          <a href="https://idolo.dev" className="underline" target="_blank">
+          <a
+            href="https://idolo.dev"
+            className="underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Treasure Uzoma
           </a>
         </div>

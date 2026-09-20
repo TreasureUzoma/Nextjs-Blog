@@ -16,8 +16,11 @@ export const joinNewsletter = async (email) => {
   const data = await res.json();
 
   if (!res.ok) {
-    throw new Error(data.message || "Unable to subscribe to newsletter");
+    return {
+      success: false,
+      message: data.message || "Unable to subscribe to newsletter",
+      data: null,
+    };
   }
-
   return data;
 };

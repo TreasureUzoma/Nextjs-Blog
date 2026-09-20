@@ -26,7 +26,7 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const [response, setResponse] = useState < ResponseState > null;
+  const [response, setResponse] = useState(null);
 
   const {
     register,

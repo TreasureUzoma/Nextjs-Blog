@@ -9,7 +9,7 @@ const Logo = () => {
         idolodev
       </a>
       <Separator orientation="vertical" className="rotate-[19deg]" />
-      <Link className="hover:underline" href="/">
+      <Link className="hover:underline" href="/blog">
         blog
       </Link>
     </div>
